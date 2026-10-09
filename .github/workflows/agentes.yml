@@ -28,5 +28,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-                    python Rokom/roteiros/orquestrador_agentes.py "${{ github.event.inputs.comando_usuario }}"
-                    
+                python $(find . -name "orquestrador_agentes.py" | head -n 1) "${{ github.event.inputs.comando_usuario }}"
+                
